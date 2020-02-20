@@ -15,10 +15,10 @@ class game:
 		self.food=self.world.create_oval(x, y, x+r, y+r, fill="deeppink")
 		x,y,r=100,100,10
 		self.snake=[]
-		self.create_snake(x,y,r,20)
+		self.create_snake(x,y,r,3)
 		self.heading='d'
-	def create_snake(self,x,y,r,steroid=10):
-		for i in range(steroid):
+	def create_snake(self,x,y,r,parts=10):
+		for i in range(parts):
 			self.snake.append(self.world.create_rectangle(x+(r*i), y, x+(r*i)+r, y+r, fill="green"))
 	def spawn_food(self,r=10):
 		x,y=random.randint(1,self.world_width/10)*10,random.randint(1,self.world_height/10)*10
