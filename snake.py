@@ -1,6 +1,6 @@
 import tkinter
 import random
-
+# Made by https://github.com/Ripeey
 class game:
 	def __init__(self):
 		self.engine = tkinter.Tk()
@@ -37,15 +37,17 @@ class game:
 				self.world.coords(tail, head[0]+self.step, head[1], head[2]+self.step, head[3])
 			else:
 				pass
-			
 			self.snake.append(self.snake.pop(0))
 			self.world.update()
-			self.engine.after(70,self.move_snake)
+			# decrease / increase speed
+			self.engine.after(300,self.move_snake)
 		else:
 			pass
-		print(self.heading)
-		print(self.world.coords(self.snake[len(self.snake)-1]))
-		#endgame
+			# End Gaame
+		# log
+		# print(self.heading)
+		# print(self.world.coords(self.snake[len(self.snake)-1]))
+		
 	def check_obstacle(self):
 		head_loc=self.world.coords(self.snake[len(self.snake)-1])
 		tail_loc=self.world.coords(self.snake[0])
